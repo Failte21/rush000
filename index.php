@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
@@ -34,7 +34,7 @@
 	</style>
 </head>
 <body>
-  <?php include("includes/header.php");?>
+	<?php include("includes/header.php");?>
 	<?php include("includes/categories.php");?>
 	<div>
 		<form action="panier.php" method="post">

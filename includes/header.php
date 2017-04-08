@@ -18,7 +18,7 @@ body {
 }
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: 0	;
     padding: 0;
     overflow: hidden;
 
@@ -44,11 +44,24 @@ li a:hover {
      <h1><font color="white">Fruits Légumes &amp; co.</font></h1>
   </header>
 <ul>
-  <li><a class="active" href="index.php">Home</a></li>
-  <li><a href="sign_up.php">Inscription</a></li>
-  <li><a href="connect.php">Me connecter</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#panier">Panier</a></li>
+	<li><a class="active" href="index.php">Home</a></li>
+	<li><a href="sign_up.php">Inscription</a></li>
+<?php
+	if ($_SESSION['user'])
+	{
+?>
+	<li><a href="sign_out.php">Me deconnecter</a></li>
+<?php
+	}
+	else
+	{
+?>
+		<li><a href="connect.php">Me connecter</a></li>
+<?php
+	}
+?>
+	<li><a href="#contact">Contact</a></li>
+	<li><a href="#panier">Panier</a></li>
 </ul>
 
 </body>
