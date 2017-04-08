@@ -5,7 +5,8 @@
 	<title>ECOMMERCE</title>
 	<style>
 	.container {
-		background-color: black;
+		border-style: solid;
+			border-width: 2px;
 		position: relative;
 		float: left;
 		height: 200px;
@@ -13,13 +14,15 @@
 		margin: 20px;
 	}
 	.image {
-		background: red;
+
 		height: 120px;
 		width: 120px;
 		margin: auto;
 	}
 	.prod {
-		background: green;
+
+		font-size: 20px;
+		text-align: center;
 		height: 30px;
 		width: auto;
 		margin: auto;
@@ -37,25 +40,20 @@
   <?php include("includes/header.php");?>
 	<?php include("includes/categories.php");?>
 	<div>
-		<?php $tab = mysqli_query("SELECT 'nom' FROM 'produit'");
-		foreach ($tab as $value) {?>
+		<?php
+		$db = mysqli_connect("localhost", "root", "root", "market");
+		$tab = mysqli_query($db, "SELECT `nom`, `image` FROM `produit`");
+		while ($array = mysqli_fetch_assoc($tab)) {
+			?>
 		<form action="panier.php" method="post">
 		<div class="container">
-				<div class="image"></div>
-				<div class="prod"></div>
+				<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
+				<div class="prod"><?php echo $array['nom']?></div>
 				<div class="prix"></div>
-				<input class="panier" type="submit" name="submit" value="Ajouter">
+				<input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Ajouter">
 		</div>
 		</form>
 		<?php } ?>
-		<form action="panier.php" method="post">
-		<div class="container">
-				<div class="image"></div>
-				<div class="prod"></div>
-				<div class="prix"></div>
-				<input class="panier" type="submit" name="submit" value="Ajouter">
-		</div>
-		</form>
 	</div>
 </body>
 </html>
