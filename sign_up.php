@@ -1,4 +1,5 @@
 <?php
+	header('Location: /rush00/result.php');
 	function check_mail($db, $mail)
 	{
 		if (!($mails = mysqli_query($db, "SELECT `email` FROM `client` WHERE `email` = '$mail'")))
@@ -21,7 +22,7 @@
 		$pass = hash("whirlpool", $_POST['passwd']);
 		if (!check_mail($db, $mail))
 		{
-			header('Location: /rush00/error.html');
+			header('Location: /rush00/result.php?error=true');
 			echo ("This email already exists\n");
 		}
 		else
