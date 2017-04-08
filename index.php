@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ECOMMERCE</title>
-<<<<<<< HEAD
 	<style>
 	.container {
 		background-color: black;
@@ -55,12 +54,5 @@
 		</div>
 		</form>
 	</div>
-=======
-</head>
-<body>
-  <?php include("includes/header.php");?>
-
-
->>>>>>> c7bf8a418d6c9edcdbc6e4e4053cb2e7d73123ef
 </body>
 </html>
