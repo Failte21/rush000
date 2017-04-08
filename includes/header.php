@@ -45,8 +45,8 @@ li a:hover {
   </header>
 <ul>
   <li><a class="active" href="index.php">Home</a></li>
-  <li><a href="sign_up.html">Inscription</a></li>
-  <li><a href="connect.html">Me connecter</a></li>
+  <li><a href="sign_up.php">Inscription</a></li>
+  <li><a href="connect.php">Me connecter</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#panier">Panier</a></li>
 </ul>
