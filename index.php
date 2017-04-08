@@ -1,4 +1,4 @@
-<?php session_start() ?>
+
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
@@ -34,9 +34,11 @@
 	</style>
 </head>
 <body>
-	<?php include("includes/header.php");?>
+  <?php include("includes/header.php");?>
 	<?php include("includes/categories.php");?>
 	<div>
+		<?php $tab = mysqli_query("SELECT 'nom' FROM 'produit'");
+		foreach ($tab as $value) {?>
 		<form action="panier.php" method="post">
 		<div class="container">
 				<div class="image"></div>
@@ -45,6 +47,7 @@
 				<input class="panier" type="submit" name="submit" value="Ajouter">
 		</div>
 		</form>
+		<?php } ?>
 		<form action="panier.php" method="post">
 		<div class="container">
 				<div class="image"></div>

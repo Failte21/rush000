@@ -5,6 +5,7 @@
 	<title></title>
 </head>
 <body>
+	 <?php include("includes/header.php");?><br />
 	<form action="connect_db.php" method="post">
 		Email : <input type="email" name="mail"><br>
 		Mot de passe : <input type="password" name="passwd">

@@ -5,6 +5,8 @@
 	<title>Inscription</title>
 </head>
 <body>
+	<?php include("includes/header.php");?>
+	<br />
 	<form action="sign_up_db.php" method="post">
 		Email : <input type="email" name="mail"><br>
 		Mot de passe : <input type="password" name="passwd">

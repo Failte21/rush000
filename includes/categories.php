@@ -12,8 +12,8 @@
  </head>
  <body>
  <ul class="green">
-   <li><a href="#Fruits">Fruits</a></li>
-   <li><a href="#Legumes">Légumes</a></li>
+   <li><a href="?Categorie=Fruits">Fruits</a></li>
+   <li><a href="?Categorie=Legumes">Légumes</a></li>
  </ul>
  </body>
  </html>
