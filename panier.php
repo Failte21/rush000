@@ -77,7 +77,7 @@ if($_POST)
 <body>
 	<div>
 <?php
-if (count($_SESSION['panier']) > 1)
+if (count($_SESSION['panier']) >= 1)
 {
 		$db = mysqli_connect("localhost", "root", "root", "market");
 			$tab = mysqli_query($db, "SELECT `nom`, `image`, `prix` FROM `produit`");
@@ -97,9 +97,7 @@ if (count($_SESSION['panier']) > 1)
           <input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Supprimer">
 			</div>
 			</form>
-		<?php } } }}
-					  else
-echo "Vous n'avez rien dans votre panier."?>
+		<?php } } }} ?>
 <div class="total">
 <?PHP
 if ($sous_tot == 0)
