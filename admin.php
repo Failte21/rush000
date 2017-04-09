@@ -93,7 +93,7 @@
 	else
 	{
 		echo "<div id=\"no-admin\">";
-		echo "<br id=\"error\" >Vous n'avez pas les droits d'administrateurs<br>";
+		echo "<br><span id=\"error\">Vous n'avez pas les droits d'administrateurs</span><br>";
 		echo "<a id=\"retour\" href='/rush00/index.php'>Retour</a>";
 ?>
 	<br>
