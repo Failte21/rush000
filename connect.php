@@ -9,7 +9,7 @@
 <body>
 	<h1 id="se-connecter">Se connecter</h1>
 	<form action="connect_db.php" method="post">
-		<span id="text-mail">Email : </span><input id="mail" type="email" name="mail" reauired><br>
+		<span id="text-mail">Email : </span><input id="mail" type="email" name="mail" required><br>
 		<span id="text-passwd">Mot de passe : </span><input id="passwd" type="password" name="passwd" reauired>
 		<input id="submit" type="submit" name="submit" value="OK"><br>
 		<a id="retour" href="/rush00/index.php">Retour</a>
