@@ -27,12 +27,12 @@
 			<b>Img url</b> : <input type="text" name="img"><br>
 			<b>Categorie</b> :
 <?php
-		$req = mysqli_query($db, "SELECT `nom` FROM `categorie`");
+		$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
 		while ($products = mysqli_fetch_assoc($req))
 		{
 ?>
 			<span><?php echo $products['nom']." : "?></span>
-			<input type="checkbox" name=<?php echo $products['nom']." : ";
+			<input type="checkbox" name=<?php echo $products['id']." : ";
 		}
 ?>			<br><br>
 			<b>Prix</b> : <input type="number" min="0" max="15" step="0.5" name="price" required>$<br>
@@ -72,7 +72,7 @@
 	</form>
 	<br><br>
 	<b>Supprimer une categorie</b><br><br>
-	<form action="admin/add_cat.php" method="post">
+	<form action="admin/delete_cat.php" method="post">
 		<b>Categorie a supprimer</b> : <input type="text" name="name" required><br>
 		<input type="submit" id="submit" name="submit" value="Valider">
 	</form>
