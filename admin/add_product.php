@@ -7,12 +7,43 @@
 		echo "Connection error\n";
 		exit;
 	}
-	$query = "INSERT INTO produit (nom, prix, image) VALUES ('" . $_POST['name'] . "', " . $_POST['price'] . ", '" . $_POST['img'] . "');";
+
 	if ($_POST['name'] && $_POST['price'])
 	{
-		if (mysqli_query($db, $query) === TRUE)
-			echo "Product ADDED\n";
+		$query = "SELECT id FROM produit WHERE nom='".$_POST['name']."';";
+		$sql = mysqli_query($db, $query);
+		$product = mysqli_fetch_assoc($sql);
+		if (count($product) == 0)
+		{
+			$query = "INSERT INTO produit (nom, prix, image) VALUES ('" . $_POST['name'] . "', " . $_POST['price'] . ", '" . $_POST['img'] . "');";
+			if (mysqli_query($db, $query) === TRUE)
+			{
+				echo "Product ADDED\n";
+				$query = "SELECT id FROM produit WHERE nom='".$_POST['name']."';";
+				if ($sql = mysqli_query($db, $query))
+				{
+					$product_id = mysqli_fetch_assoc($sql);
+					foreach ($_POST as $cat => $value)
+					{
+						$query = "SELECT id FROM categorie WHERE nom='".$cat."';";
+						if (($sql = mysqli_query($db, $query)) != FALSE)
+						{
+							$cat_id = mysqli_fetch_assoc($sql);
+							if (count($cat_id) > 0)
+							{
+								$query = "INSERT INTO categorie_produit (id_produit, id_categorie) VALUES (" . $product_id['id'] . ", " . $cat_id['id'] . ");";
+								if (!mysqli_query($db, $query))
+									echo "Link to Categorie $cat Failed.\n";
+							}
+						}
+					}
+				}
+			}
+			else
+				echo "Failed\n";
+		}
 		else
-			echo "Failed\n";
+			echo "Product already exists.\n";
+		mysqli_free_result($sql);
 	}
 ?>
