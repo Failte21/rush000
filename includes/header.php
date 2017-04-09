@@ -41,7 +41,6 @@ li a:hover {
 </style>
 </head>
 <body>
-	<?php echo $_SESSION['admin'] ?>
   <header class="header">
      <h1><font color="white">Fruits Légumes &amp; co.</font></h1>
   </header>
