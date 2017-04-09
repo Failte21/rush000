@@ -24,11 +24,7 @@
 		if (!check($db, $mail, $pass))
 			header('Location: /rush00/result_co.php?error=true');
 		else
-		{
 			$_SESSION["user"] = $mail;
-			if (!mysqli_query($db, "INSERT INTO `client`(`email`, `mdp`) VALUES ('$mail', '$pass')") === TRUE)
-				echo "ko\n";
-		}
 	}
 	else
 		echo "ERROR\n";
