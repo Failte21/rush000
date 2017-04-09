@@ -21,6 +21,7 @@
 	<b>Ajouter un produit</b><br><br>
 	<form action="admin/add_product.php" method="post">
 		<b>Nom</b> : <input type="text" name="name" required><br>
+		<b>Img url</b> : <input type="text" name="img"><br>
 		<b>Categorie</b> :         
 <?php
 		$req = mysqli_query($db, "SELECT `nom` FROM `categorie`");
