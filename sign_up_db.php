@@ -26,8 +26,11 @@
 			echo ("This email already exists\n");
 		}
 		else
+		{
 			if (!mysqli_query($db, "INSERT INTO `client`(`email`, `mdp`) VALUES ('$mail', '$pass')") === TRUE)
 				echo "ko\n";
+			$SESSION['user'] = $mail;
+		}
 	}
 	else
 		echo "ERROR\n";

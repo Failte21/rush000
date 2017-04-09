@@ -20,4 +20,5 @@ foreach($_SESSION['panier'] as $key =>$value)
 	$query = "INSERT INTO commande (id_client, id_commande, id_produit, quantite, total) VALUES (" . $result['id'] . ", ".$result3['id'].", ".$result2['id'].", " . $value . ", " . $value * $result1['prix']. ");";
 	mysqli_query($db, $query);
 }
+$_SESSION['panier'] = array();
 ?>

@@ -5,8 +5,7 @@
 		exit;
 	if ($_POST["submit"] == "Valider")
 	{
-		$to_remove = mysqli_real_escape_string($db, $_POST["cat"]);
-		echo $to_remove."\n";
+		$to_remove = mysqli_real_escape_string($db, htmlentities($_POST["cat"]));
 		$cat = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie` WHERE `nom` = '$to_remove'");
 		$id = 0;
 		while ($e = mysqli_fetch_assoc($cat))
@@ -26,6 +25,6 @@
 		}
 	}
 	else
-		echo "fail\n";
+		echo "Failure\n";
 ?>
 <br><a href="/rush00/index.php">Retour a l'accueil</a>

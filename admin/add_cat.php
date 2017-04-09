@@ -21,7 +21,7 @@ if ($_SESSION['admin'])
 	}
 	if ($_POST["submit"] === "Valider" && $_POST[name] !== "")
 		{
-			$name = $_POST['name'];
+			$name = mysqli_real_escape_string($db, htmlentities($_POST["name"]));
 			if (!check_categorie($db, $name))
 			{
 				echo("La categorie $name existe deja");
