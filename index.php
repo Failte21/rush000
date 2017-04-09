@@ -88,8 +88,21 @@ $_SESSION['panier'] = $panier;
 						$cat_prod_id[] = $cat_prod_ary['id_produit'];
 					}
 				}
-				print_r($cat_prod_id);
 				$tab = mysqli_query($db, "SELECT `id`, `nom`, `image` FROM `produit`");
+				while ($array = mysqli_fetch_assoc($tab)) {
+					foreach ($cat_prod_id as $value) {
+						if ($array['id'] == $value) { ?>
+							<form action="index.php" method="post">
+							<div class="container">
+									<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
+									<div class="prod"><?php echo $array['nom']?></div>
+									<div class="prix"></div>
+									<input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Ajouter">
+							</div>
+							</form>
+				<?php	}
+					}
+				}
 			}
 		} ?>
 	</div>
