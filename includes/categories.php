@@ -5,7 +5,7 @@
  <style>
 .green {
      background-color: #32CD32;
-     max-width: 580px;
+     max-width: 575px;
  }
  </style>
  </head>
