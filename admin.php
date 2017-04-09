@@ -1,12 +1,10 @@
 <?php
 	session_start();
 	include("includes/header.php");
-	$db = mysqli_connect("localhost","root", "root", "market");
-	if (mysqli_connect_errno())
-	{
-		echo "Connection error\n";
+	include("db_connect.php");
+	$db = db_connect();
+	if (!$db)
 		exit;
-	}
 ?>
 	<!DOCTYPE html>
 	<html>
@@ -16,15 +14,6 @@
 	</head>
 	<body>
 <?php
-	if (!$_SESSION["admin"] AND $_POST['submit'] == 'Valider')
-	{
-		$admin = mysqli_real_escape_string($db, $_POST['name']);
-		$pass = hash("whirlpool", mysqli_real_escape_string($db, $_POST['pass']));
-		$req = mysqli_query($db, "SELECT `id` FROM `admin` WHERE `login` = '$admin' AND `mdp` = '$pass'");
-		$user_admin = mysqli_fetch_assoc($req);
-		if (count($user_admin) > 0)
-			$_SESSION['admin'] = $admin;
-	}
 	if ($_SESSION["admin"])
 	{
 ?>
@@ -93,7 +82,7 @@
 		echo "<a href='/rush00/index.php'>Retour</a>";
 ?>
 	<br>
-	<form action="admin.php" method="post">
+	<form action="admin_db.php" method="post">
 		<b>Nom d'administrateur</b> : <input type="text" name="name"><br>
 		<b>Mot de passe</b> : <input type="password" name="pass"><br>
 		<input type="submit" name="submit" value="Valider">
