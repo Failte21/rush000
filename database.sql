@@ -18,11 +18,14 @@ INSERT INTO `admin` (`id`, `login`, `mdp`) VALUES
 CREATE TABLE `commande` (
 	`id` INT NOT NULL AUTO_INCREMENT ,
 	`id_client` INT NOT NULL ,
+	`id_commande` INT NOT NULL ,
 	`id_produit` INT NOT NULL ,
 	`quantite` INT NOT NULL ,
 	`total` INT NOT NULL ,
 	PRIMARY KEY (`id`))
 ENGINE = InnoDB;
+
+INSERT INTO `commande` (`id`, `id_client`, `id_commande`, `id_produit`, `quantite`, `total`) VALUES ('1', '0', '0', '0', '0', '0');
 
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
