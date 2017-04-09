@@ -10,7 +10,6 @@
 			return (FALSE);
 		return (TRUE);
 	}
-
 	$error = FALSE;
 	$db = mysqli_connect("localhost","root", "root", "market");
 	if (mysqli_connect_errno())

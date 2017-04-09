@@ -1,5 +1,6 @@
 <?php
 	include("includes/header.php");
+	//echo($_GET['error']);
 	if 	($_GET['error'])
 	{
 		if ($_GET['error'] == "notyourmail")
