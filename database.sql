@@ -54,7 +54,7 @@ CREATE TABLE `produit` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prix` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` TEXT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
