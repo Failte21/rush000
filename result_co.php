@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include("includes/header.php");
 	if($_GET['error'])
 		echo "Wrong password or mail<br>\n";
 	else
