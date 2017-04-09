@@ -101,7 +101,12 @@ print_r($_SESSION);
 				while ($array = mysqli_fetch_assoc($tab)) {
 					foreach ($cat_prod_id as $value) {
 						if ($array['id'] == $value) { ?>
-							<form action="index.php" method="post">
+							<form action="
+				<?PHP
+				if (!$_GET['Categorie'])
+					echo "index.php";
+				else
+					echo "index.php?Categorie=" . $_GET['Categorie'];?>" method="post">
 							<div class="container">
 									<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
 									<div class="prod"><?php echo $array['nom']?></div>
