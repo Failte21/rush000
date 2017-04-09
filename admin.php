@@ -54,36 +54,36 @@
 	</div>
 
 	<div class="rest">
-		<h1>Supprimer un produit</h1><br><br>
+		<h1>Supprimer un produit</h1><br>
 		<form action="admin/delete_product.php" method="post">
 			<span class="champ"><b>Produit a supprimer</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
-		<br><br>
-		<h1>Supprimer un utilisateur</h1><br><br>
+		<br><br><br>
+		<h1>Supprimer un utilisateur</h1><br>
 		<form action="admin/delete_user.php" method="post">
 			<span class="champ"><b>Utilisateur a supprimer</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
-		<br><br>
-		<h1>Ajouter un administrateur</h1><br><br>
+		<br><br><br>
+		<h1>Ajouter un administrateur</h1><br>
 		<form action="admin/add_admin.php" method="post">
 			<span class="champ"><b>Utilisateur a ajouter</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
-		<br><br>
-		<h1>Ajouter une categorie</h1><br><br>
+		<br><br><br>
+		<h1>Ajouter une categorie</h1><br>
 		<form action="admin/add_cat.php" method="post">
 			<span class="champ"><b>Nom</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
-		<br><br>
-		<h1>Supprimer une categorie</h1><br><br>
+		<br><br><br>
+		<h1>Supprimer une categorie</h1><br>
 		<form action="admin/delete_cat.php" method="post">
 			<span class="champ"><b>Categorie a supprimer</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
-		<br><br>
+		<br><br><br>
 	</div>
 	</div>
 </body>
