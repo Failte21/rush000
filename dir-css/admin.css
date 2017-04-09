@@ -1,3 +1,13 @@
+#error
+{
+	margin: auto;
+	position: relative;
+	left: 350px;
+	border-style: solid;
+	color: red;
+	font-size: x-large;
+}
+
 #admin input:hover
 {
 	box-shadow: 5px 5px 1px #000000;
