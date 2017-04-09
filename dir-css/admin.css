@@ -27,7 +27,7 @@
 	margin: auto;
 	border: solid;
 	border-color: green;
-	border-radius: 5%;
+	border-radius: 15px;
 	width: 350px;
 	height: 200px;
 	background-color: green;
@@ -71,7 +71,6 @@
 	left: 8px;
 }
 
-
 #admin .ajoutpr #submit
 {
 	top: 65px;
@@ -82,37 +81,72 @@
 #admin .modif #name
 {
 	position: relative;
-	top: 40px;
+	top: 20px;
 	left: 98px;
 }
 
 #admin .modif #new
 {
 	position: relative;
-	top: 50px;
+	top: 30px;
 	left: 38px;
 }
 
 #admin .modif #submit
 {
 	position: relative;
-	top: 120px;
+	top: 67px;
 	left: 140px;
 }
 
-#admin .rest #submit
+#admin .modif form
+{
+	height: 140px;
+}
+
+#admin .suppro form
+{
+	height: 100px;
+}
+
+#admin .suppro #submit, .ajoutcat #submit, .suppcat #submit
 {
 	position: relative;
 	left: 140px;
-	top: 120px;
+	top: 47px;
 }
 
-#admin .rest .champ
+#admin .suppro .champ
 {
 	position: relative;
-	top: 76px;
+	top: 30px;
 	left: 10px;
 }
+
+#admin .ajoutcat .champ
+{
+	position: relative;
+	top: 24px;
+	left: 84px;
+}
+
+#admin .ajoutcat form
+{
+	height: 100px;
+}
+
+#admin .suppcat form
+{
+	height: 100px;
+}
+
+#admin #select
+{
+	position: relative;
+	top: 26px;
+	left: 83px;
+}
+
 
 #no-admin form
 {
@@ -165,7 +199,6 @@
 	width: 70px;
 	left: 203px;
 }
-
 
 #no-admin #name
 {
