@@ -15,8 +15,8 @@
 	</form>
 	<h1 id="title">Changer de mot de passe</h1>
 	<form action="modif_pass.php" method="post">
-		<span id="passwd">Mot de passe actuel : <input type="password" name="old_passwd" reauired></span>
-		<span id="newpasswd">Nouveau mot de passe : <input type="password" name="new_passwd" reauired></span>
+		<span id="passwd">Mot de passe actuel : <input type="password" name="old_passwd" required></span>
+		<span id="newpasswd">Nouveau mot de passe : <input type="password" name="new_passwd" required></span>
 		<input id="submit" type="submit" name="submit" value="OK"><br>
 	</form>
 	<a id="retour" href="/rush00/index.php">Retour</a>

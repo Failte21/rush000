@@ -1,10 +1,11 @@
 <?php
 	include("includes/header.php");
-	//echo($_GET['error']);
 	if 	($_GET['error'])
 	{
 		if ($_GET['error'] == "notyourmail")
 			echo "<h1 id=\"wrong\" >Oups... This is not your mail</h1><br>";
+		else if ($_GET['error'] == "wrongpwd")
+			echo "<h1 id=\"wrong\" >Oups... Wrong password</h1><br>";
 		else if ($_GET['error'] == true || $_GET['error'] == "mailexists")
 			echo "<h1 id=\"wrong\" >Oups... This Mail already exists</h1><br>";
 	}
