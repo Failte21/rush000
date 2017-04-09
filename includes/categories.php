@@ -5,18 +5,21 @@
  <style>
 .green {
      background-color: #32CD32;
-     max-width: 575px;
+ }
+ .size {
+   width: auto;
  }
  </style>
  </head>
  <body>
  <ul class="green">
-   <li><a href="?Categorie=fruits">Fruits</a></li>
-   <li><a href="?Categorie=legumes">Légumes</a></li>
-   <li><a href="?Categorie=boulangerie">Boulangerie</a></li>
-   <li><a href="?Categorie=poissonnerie">Poissonnerie</a></li>
-   <li><a href="?Categorie=boucherie">Boucherie</a></li>
-   <li><a href="?Categorie=conserve">Conserve</a></li>
+   <?php
+   $db = mysqli_connect("localhost", "root", "root", "market");
+   $tab = mysqli_query($db, "SELECT `nom` FROM `categorie`");
+   $find = true;
+   while ($array = mysqli_fetch_assoc($tab)) { ?>
+     <li class="size"><a href=<?php echo "?Categorie=".$array['nom'];?>><?php echo $array['nom'];?></a></li>
+   <?php } ?>
  </ul>
  </body>
  </html>
