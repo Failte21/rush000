@@ -24,6 +24,13 @@
 	font-size: medium;
 }
 
+#admin .ajoutpr #prix
+{
+	position: relative;
+	top: 40px;
+	left: 50px;
+}
+
 #admin .ajoutpr #submit
 {
 	top: 65px;

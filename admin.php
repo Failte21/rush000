@@ -20,6 +20,7 @@
 ?>
 	<div id="admin">
 	<br>
+
 	<div class="ajoutpr">
 		<h1>Ajouter un produit</h1><br><br>
 		<form action="admin/add_product.php" method="post">
@@ -28,18 +29,19 @@
 			<b>Categorie</b> :
 <?php
 		$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
-		while ($products = mysqli_fetch_assoc($req))
+		while ($cat = mysqli_fetch_assoc($req))
 		{
 ?>
-			<span><?php echo $products['nom']." : "?></span>
-			<input type="checkbox" name=<?php echo $products['id']." : ";
+			<span><?php echo $cat['nom']." : "?></span>
+			<input type="checkbox" name=<?php echo $cat['nom']." : ";
 		}
 ?>			<br><br>
-			<b>Prix</b> : <input type="number" min="0" max="15" step="0.5" name="price" required>$<br>
+			<span id="prix"><b>Prix</b> : <input type="number" min="0" max="15" step="0.5" name="price" required>$<br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br>
 	</div>
+
 	<b>Modifier un prix</b><br><br>
 	<form action="admin/modif_price.php" method="post">
 		<b>Nom</b> : <input type="text" name="name" required><br>
