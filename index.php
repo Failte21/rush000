@@ -1,11 +1,12 @@
 <?php
 session_start();
-$panier = array();
-$elem = key($_POST);
-if (!$_SESSION['panier'] && $elem)
-	$_SESSION['panier'] = array($elem => 0);
-if ($elem)
+if ($_POST)
 {
+	$elem = key($_POST);
+	$panier = array();
+	echo "hello";
+	if (!$_SESSION['panier'])
+		$_SESSION['panier'] = array($elem => 0);
 	foreach($_SESSION['panier'] as $key => $value)
 	{
 		if ($key == $elem)
@@ -14,8 +15,9 @@ if ($elem)
 			$panier += array($elem => 1);
 	$panier[$key] = $value;
 	}
+	$_SESSION['panier'] = $panier;
 }
-$_SESSION['panier'] = $panier;
+print_r($_SESSION);
 ?>
 <?php include("includes/header.php");?>
 <html lang="fr">
