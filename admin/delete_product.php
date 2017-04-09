@@ -8,16 +8,17 @@
 		exit;
 	}
 
-	if ($_POST['name'] && $_POST['price'])
+	if ($_POST['name'])
 	{
 		$query = "SELECT id FROM produit WHERE nom='".$_POST['name']."';";
 		$sql = mysqli_query($db, $query);
-	 	$product = mysqli_fetch_assoc($sql);
-	 	if (count($product) > 0)
+	 	$product_id = mysqli_fetch_assoc($sql);
+	 	if (count($product_id) > 0)
 	 	{
-			$query = "UPDATE produit SET prix=" . $_POST['price'] . " WHERE nom='" . $_POST['name'] . "'";
-			if (mysqli_query($db, $query) === TRUE)
-				echo "Price Updated.\n";
+			$query1 = "DELETE FROM categorie_produit WHERE id_produit=".$product_id['id'].";";
+			$query2 = "DELETE FROM produit WHERE id=".$product_id['id'].";";
+			if (mysqli_query($db, $query1) === TRUE && mysqli_query($db, $query2) === TRUE)
+				echo "Product Deleted.\n";
 		}
 		else
 			echo "Product does not exist.\n";
