@@ -4,7 +4,6 @@ if ($_POST)
 {
 	$elem = key($_POST);
 	$panier = array();
-	echo "hello";
 	if (!$_SESSION['panier'])
 		$_SESSION['panier'] = array($elem => 0);
 	foreach($_SESSION['panier'] as $key => $value)
