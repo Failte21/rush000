@@ -1,8 +1,13 @@
+#admin input:hover
+{
+	box-shadow: 5px 5px 1px #000000;
+}
+
 #admin #submit
 {
 	border-radius: 10%;
 	background-color: #F5F5F5;
-	box-shadow: 1px 1px 1px #000000;
+	box-shadow: 5px 5px 1px #000000;
 }
 
 #admin form
@@ -18,10 +23,28 @@
 	background-color: green;
 }
 
-#admin .ajoutpr h1
+#admin h1
 {
-	color: white;
-	font-size: medium;
+	border-style: solid;
+    border-radius: 10px;
+    width: 200px;
+    font-size: medium;
+    margin: auto;
+    text-align: center;
+}
+
+#admin .ajoutpr #name
+{
+	top: 10px;
+	position: relative;
+	left: 29px;
+}
+
+#admin .ajoutpr #url
+{
+	top: 20px;
+	position: relative;
+	left: 10px
 }
 
 #admin .ajoutpr #prix
@@ -31,11 +54,54 @@
 	left: 50px;
 }
 
+#admin .ajoutpr #cat
+{
+	position: relative;
+	top: 28px;
+	left: 8px;
+}
+
+
 #admin .ajoutpr #submit
 {
 	top: 65px;
 	left: 140px;
 	position: relative;
+}
+
+#admin .modif #name
+{
+	position: relative;
+	top: 40px;
+	left: 98px;
+}
+
+#admin .modif #new
+{
+	position: relative;
+	top: 50px;
+	left: 38px;
+}
+
+#admin .modif #submit
+{
+	position: relative;
+	top: 120px;
+	left: 140px;
+}
+
+#admin .rest #submit
+{
+	position: relative;
+	left: 140px;
+	top: 120px;
+}
+
+#admin .rest .champ
+{
+	position: relative;
+	top: 76px;
+	left: 10px;
 }
 
 #no-admin form
@@ -121,14 +187,13 @@
     left: 10px;
 }
 
-#no-admin #submit:hover
+#submit:hover
 {
-	color: #F5F5F5;
 	background-color: green;
 	border-color: green;
 }
 
-#no-admin #retour:hover
+#retour:hover
 {
 	background-color: rgb(245, 62, 62);
 	border-color: rgb(245, 62, 62);
