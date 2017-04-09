@@ -4,7 +4,6 @@ if ($_POST)
 {
 	$elem = key($_POST);
 	$panier = array();
-	echo "hello";
 	if (!$_SESSION['panier'])
 		$_SESSION['panier'] = array($elem => 0);
 	foreach($_SESSION['panier'] as $key => $value)
@@ -17,7 +16,6 @@ if ($_POST)
 	}
 	$_SESSION['panier'] = $panier;
 }
-print_r($_SESSION);
 ?>
 <?php include("includes/header.php");?>
 <html lang="fr">
@@ -85,29 +83,30 @@ print_r($_SESSION);
 			$cat = mysqli_query($db, "SELECT `id`, `nom` FROM `categorie`");
 			$cat_array = mysqli_fetch_assoc($cat);
 			$find = false;
-			while ($cat_array['nom'] != $_GET['Categorie']) {
+			while ($cat_array && $cat_array['nom'] != $_GET['Categorie']) {
 				$cat_array = mysqli_fetch_assoc($cat);
 			}
 			if ($cat_array['nom'] == $_GET['Categorie']) {
 				$find = true;
 				$cat_prod = mysqli_query($db, "SELECT `id_produit`, `id_categorie` FROM `categorie_produit`");
 				$cat_prod_id = array();
-				while ($cat_prod_ary = mysqli_fetch_assoc($cat_prod)) {
+				while ($find && $cat_prod_ary = mysqli_fetch_assoc($cat_prod)) {
+
 					if ($cat_prod_ary['id_categorie'] == $cat_array['id']) {
 						$cat_prod_id[] = $cat_prod_ary['id_produit'];
 					}
 				}
 				$tab = mysqli_query($db, "SELECT `id`, `nom`, `image`, `prix` FROM `produit`");
-				while ($array = mysqli_fetch_assoc($tab)) {
+				while ($find && $array = mysqli_fetch_assoc($tab)) {
 					foreach ($cat_prod_id as $value) {
 						if ($array['id'] == $value) { ?>
-							<form action="
-				<?PHP
-				if (!$_GET['Categorie'])
-					echo "index.php";
-				else
-					echo "index.php?Categorie=" . $_GET['Categorie'];?>" method="post">
-							<div class="container">
+							<form action=
+							<?PHP
+							if (!$_GET['Categorie'])
+								echo "index.php";
+							else
+								echo "index.php?Categorie=" . $_GET['Categorie'];?> method="post">
+										<div class="container">
 									<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
 									<div class="prod"><?php echo $array['nom']?></div>
 									<div class="prix"><?php echo $array['prix'];?> &euro;</div>

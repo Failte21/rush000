@@ -1,8 +1,23 @@
+#error
+{
+	margin: auto;
+	position: relative;
+	left: 350px;
+	border-style: solid;
+	color: red;
+	font-size: x-large;
+}
+
+#admin input:hover
+{
+	box-shadow: 5px 5px 1px #000000;
+}
+
 #admin #submit
 {
 	border-radius: 10%;
 	background-color: #F5F5F5;
-	box-shadow: 1px 1px 1px #000000;
+	box-shadow: 5px 5px 1px #000000;
 }
 
 #admin form
@@ -12,16 +27,34 @@
 	margin: auto;
 	border: solid;
 	border-color: green;
-	border-radius: 5%;
+	border-radius: 15px;
 	width: 350px;
 	height: 200px;
 	background-color: green;
 }
 
-#admin .ajoutpr h1
+#admin h1
 {
-	color: white;
-	font-size: medium;
+	border-style: solid;
+    border-radius: 10px;
+    width: 200px;
+    font-size: medium;
+    margin: auto;
+    text-align: center;
+}
+
+#admin .ajoutpr #name
+{
+	top: 10px;
+	position: relative;
+	left: 29px;
+}
+
+#admin .ajoutpr #url
+{
+	top: 20px;
+	position: relative;
+	left: 10px
 }
 
 #admin .ajoutpr #prix
@@ -31,12 +64,89 @@
 	left: 50px;
 }
 
+#admin .ajoutpr #cat
+{
+	position: relative;
+	top: 28px;
+	left: 8px;
+}
+
 #admin .ajoutpr #submit
 {
 	top: 65px;
 	left: 140px;
 	position: relative;
 }
+
+#admin .modif #name
+{
+	position: relative;
+	top: 20px;
+	left: 98px;
+}
+
+#admin .modif #new
+{
+	position: relative;
+	top: 30px;
+	left: 38px;
+}
+
+#admin .modif #submit
+{
+	position: relative;
+	top: 67px;
+	left: 140px;
+}
+
+#admin .modif form
+{
+	height: 140px;
+}
+
+#admin .suppro form
+{
+	height: 100px;
+}
+
+#admin .suppro #submit, .ajoutcat #submit, .suppcat #submit
+{
+	position: relative;
+	left: 140px;
+	top: 47px;
+}
+
+#admin .suppro .champ
+{
+	position: relative;
+	top: 30px;
+	left: 10px;
+}
+
+#admin .ajoutcat .champ
+{
+	position: relative;
+	top: 24px;
+	left: 84px;
+}
+
+#admin .ajoutcat form
+{
+	height: 100px;
+}
+
+#admin .suppcat form
+{
+	height: 100px;
+}
+
+#admin #select
+{
+	position: relative;
+	top: 26px;
+	left: 83px;
+}
+
 
 #no-admin form
 {
@@ -90,7 +200,6 @@
 	left: 203px;
 }
 
-
 #no-admin #name
 {
 	position: relative;
@@ -121,14 +230,13 @@
     left: 10px;
 }
 
-#no-admin #submit:hover
+#submit:hover
 {
-	color: #F5F5F5;
 	background-color: green;
 	border-color: green;
 }
 
-#no-admin #retour:hover
+#retour:hover
 {
 	background-color: rgb(245, 62, 62);
 	border-color: rgb(245, 62, 62);

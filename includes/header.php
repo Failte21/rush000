@@ -45,24 +45,24 @@ li a:hover {
      <h1><font color="white">Fruits Légumes &amp; co.</font></h1>
   </header>
 <ul>
-	<li><a class="active" href="index.php">Home</a></li>
+	<li><a class="active" href="/rush00/index.php">Home</a></li>
 	<li><a href="sign_up.php">Inscription</a></li>
 <?php
 	if ($_SESSION['user'] || $_SESSION['admin'])
 	{
 ?>
-	<li><a href="sign_out.php">Me deconnecter</a></li>
+	<li><a href="/rush00/sign_out.php">Me deconnecter</a></li>
 <?php
 	}
 	else
 	{
 ?>
-		<li><a href="connect.php">Me connecter</a></li>
+		<li><a href="/rush00/connect.php">Me connecter</a></li>
 <?php
 	}
 ?>
-	<li><a href="#panier">Panier</a></li>
-	<li><a href="admin.php">Admin</a></li>
+	<li><a href="/rush00/panier.php">Panier</a></li>
+	<li><a href="/rush00/admin.php">Admin</a></li>
 </ul>
 
 </body>

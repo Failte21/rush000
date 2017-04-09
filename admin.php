@@ -22,11 +22,11 @@
 	<br>
 
 	<div class="ajoutpr">
-		<h1>Ajouter un produit</h1><br><br>
+		<h1>Ajouter un produit</h1><br>
 		<form action="admin/add_product.php" method="post">
-			<b>Nom</b> : <input type="text" name="name" required><br>
-			<b>Img url</b> : <input type="text" name="img"><br>
-			<b>Categorie</b> :
+			<span id="name" ><b>Nom</b> : <input type="text" name="name" required><br></span>
+			<span id="url"><b>Img url</b> : <input type="text" name="img"><br></span>
+			<div id="cat" ><b>Categorie</b> :
 <?php
 		$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
 		while ($cat = mysqli_fetch_assoc($req))
@@ -36,49 +36,81 @@
 			<input type="checkbox" name=<?php echo $cat['nom']." : ";
 		}
 ?>			<br><br>
+			</div>
 			<span id="prix"><b>Prix</b> : <input type="number" min="0" max="15" step="0.5" name="price" required>$<br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
-		<br><br>
+		<br><br><br>
 	</div>
 
-	<b>Modifier un prix</b><br><br>
-	<form action="admin/modif_price.php" method="post">
-		<b>Nom</b> : <input type="text" name="name" required><br>
-		<b>Nouveau prix</b> : <input type="number" min="0" max="15" step="0.5" name="price" required>$<br>
-		<input type="submit" id="submit" name="submit" value="Valider">
-	</form>
-	<br><br>
-	<b>Supprimer un produit</b><br><br>
-	<form action="admin/delete_product.php" method="post">
-		<b>Produit a supprimer</b> : <input type="text" name="name" required><br>
-		<input type="submit" id="submit" name="submit" value="Valider">
-	</form>
-	<br><br>
-	<b>Supprimer un utilisateur</b><br><br>
-	<form action="admin/delete_user.php" method="post">
-		<b>Utilisateur a supprimer</b> : <input type="text" name="name" required><br>
-		<input type="submit" id="submit" name="submit" value="Valider">
-	</form>
-	<br><br>
-	<b>Ajouter un administrateur</b><br><br>
-	<form action="admin/add_admin.php" method="post">
-		<b>Utilisateur a supprimer</b> : <input type="text" name="name" required><br>
-		<input type="submit" id="submit" name="submit" value="Valider">
-	</form>
-	<br><br>
-	<b>Ajouter une categorie</b><br><br>
-	<form action="admin/add_cat.php" method="post">
-		<b>Nom</b> : <input type="text" name="name" required><br>
-		<input type="submit" id="submit" name="submit" value="Valider">
-	</form>
-	<br><br>
-	<b>Supprimer une categorie</b><br><br>
-	<form action="admin/delete_cat.php" method="post">
-		<b>Categorie a supprimer</b> : <input type="text" name="name" required><br>
-		<input type="submit" id="submit" name="submit" value="Valider">
-	</form>
-	<br><br>
+	<div class="modif">
+		<h1>Modifier un prix</h1><br>
+		<form action="admin/modif_price.php" method="post">
+			<span id="name" ><b>Nom</b> : <input type="text" name="name" required><br></span>
+			<span id="new" ><b>Nouveau prix</b> : <input type="number" min="0" max="15" step="0.5" name="price" required>$<br></span>
+			<input id="submit" type="submit" id="submit" name="submit" value="Valider">
+		</form>
+		<br><br><br>
+	</div>
+
+	<div class="suppro">
+		<h1>Supprimer un produit</h1><br>
+		<form action="admin/delete_product.php" method="post">
+			<span class="champ"><b>Produit a supprimer</b> : <input type="text" name="name" required><br></span>
+			<input type="submit" id="submit" name="submit" value="Valider">
+		</form>
+		<br><br><br>
+	</div>
+
+	<div class="suppro">
+		<h1>Supprimer un utilisateur</h1><br>
+		<form action="admin/delete_user.php" method="post">
+			<span class="champ"><b>Utilisateur a supprimer</b> : <input type="text" name="name" required><br></span>
+			<input type="submit" id="submit" name="submit" value="Valider">
+		</form>
+		<br><br><br>
+	</div>
+
+	<div class="suppro">
+		<h1>Ajouter un administrateur</h1><br>
+		<form action="admin/add_admin.php" method="post">
+			<span class="champ"><b>Utilisateur a ajouter</b> : <input type="text" name="name" required><br></span>
+			<input type="submit" id="submit" name="submit" value="Valider">
+		</form>
+		<br><br><br>
+	</div>
+
+	<div class="ajoutcat">
+		<h1>Ajouter une categorie</h1><br>
+		<form action="admin/add_cat.php" method="post">
+			<span class="champ"><b>Nom</b> : <input type="text" name="name" required><br></span>
+			<input type="submit" id="submit" name="submit" value="Valider">
+		</form>
+		<br><br><br>
+	</div>
+
+	<div class="suppcat">
+		<h1>Supprimer une categorie</h1><br>
+		<form action="admin/delete_cat.php" method="post">
+			<div id="select">
+				<b>Categorie</b> :
+				<select name="cat">
+<?php
+				$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
+				while ($cat = mysqli_fetch_assoc($req))
+				{
+?>
+					<option value=<?php echo $cat['nom']?>><?php echo $cat['nom']?></option>
+<?php
+				}
+?>
+				</select>
+			</div>
+			<input type="submit" id="submit" name="submit" value="Valider">
+		</form>
+		<br><br><br>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
@@ -87,7 +119,7 @@
 	else
 	{
 		echo "<div id=\"no-admin\">";
-		echo "<br id=\"error\" >Vous n'avez pas les droits d'administrateurs<br>";
+		echo "<br><span id=\"error\">Vous n'avez pas les droits d'administrateurs</span><br>";
 		echo "<a id=\"retour\" href='/rush00/index.php'>Retour</a>";
 ?>
 	<br>

@@ -1,7 +1,11 @@
 <?php
+	include("includes/header.php");
 	if 	($_GET['error'])
-		echo "This Mail already exists<br>\n";
+		echo "<h1 id=\"wrong\" >Oups... This Mail already exists</h1><br>";
 	else
-		echo "Success<br>\n";
+	{
+			echo "<h1  id=\"Success\">Success</h1><br>\n";
+	}
 ?>
-<a href="/rush00/index.php">Retour</a>
+<link rel="stylesheet" type="text/css" href="dir-css/result.css">
+<a id="Retour" href="/rush00/index.php">Retour</a>
