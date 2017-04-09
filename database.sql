@@ -63,6 +63,21 @@ INSERT INTO `produit` (`id`, `nom`, `prix`, `image`) VALUES
 (10, 'steak', 4, './img/steak.jpg'),
 (11, 'baguette', 1, './img/baguette.jpg');
 
+INSERT INTO `categorie_produit` (`id`, `id_produit`, `id_categorie`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 2),
+(6, 6, 2),
+(8, 7, 6),
+(9, 7, 2),
+(10, 8, 4),
+(11, 9, 4),
+(12, 9, 6),
+(13, 10, 5),
+(14, 11, 3);
+
 
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
