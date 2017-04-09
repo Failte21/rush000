@@ -7,4 +7,4 @@
 	}
 ?>
 <link rel="stylesheet" type="text/css" href="dir-css/result.css">
-<a href="/rush00/index.php">Retour</a>
+<a id="Retour" href="/rush00/index.php">Retour</a>
