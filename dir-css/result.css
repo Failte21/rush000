@@ -1,4 +1,4 @@
-a
+#Retour
 {
 	text-decoration: none;
 	color: rgb(252, 252, 252);
@@ -10,7 +10,7 @@ a
 	box-shadow: 1px 1px 1px #000000;
 }
 
-a:hover
+#Retour:hover
 {
 	background-color: rgb(23, 199, 8);
 	border-color: rgb(23, 199, 8);
@@ -35,11 +35,4 @@ a:hover
 	font-size: 37px;
 	color: red;
 	text-decoration: underline;
-}
-
-body
-{
-    margin: auto;
-    max-width: 1100px;
-    background-color: #FDF5E6;
 }
