@@ -13,10 +13,10 @@
 	{
 		$query = "SELECT id FROM client WHERE email='".$name."';";
 		$sql = mysqli_query($db, $query);
-	 	$product_id = mysqli_fetch_assoc($sql);
-	 	if (count($product_id) > 0)
+	 	$user_id = mysqli_fetch_assoc($sql);
+	 	if (count($user_id) > 0)
 	 	{
-			$query = "DELETE FROM client WHERE id=".$product_id['id'].";";
+			$query = "DELETE FROM client WHERE id=".$user_id['id'].";";
 			if (mysqli_query($db, $query) === TRUE)
 				echo "User Deleted.\n";
 		}
