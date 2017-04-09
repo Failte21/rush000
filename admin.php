@@ -68,7 +68,7 @@
 	</form>
 	<br><br>
 	<b>Supprimer une categorie</b><br><br>
-	<form action="admin/add_cat.php" method="post">
+	<form action="admin/delete_cat.php" method="post">
 		<b>Categorie a supprimer</b> : <input type="text" name="name" required><br>
 		<input type="submit" name="submit" value="Valider">
 	</form>
