@@ -83,14 +83,15 @@ if ($_POST)
 			$cat = mysqli_query($db, "SELECT `id`, `nom` FROM `categorie`");
 			$cat_array = mysqli_fetch_assoc($cat);
 			$find = false;
-			while ($cat_array['nom'] != $_GET['Categorie']) {
+			while ($cat_array && $cat_array['nom'] != $_GET['Categorie']) {
 				$cat_array = mysqli_fetch_assoc($cat);
 			}
 			if ($cat_array['nom'] == $_GET['Categorie']) {
 				$find = true;
 				$cat_prod = mysqli_query($db, "SELECT `id_produit`, `id_categorie` FROM `categorie_produit`");
 				$cat_prod_id = array();
-				while ($cat_prod_ary = mysqli_fetch_assoc($cat_prod)) {
+				while ($find && $cat_prod_ary = mysqli_fetch_assoc($cat_prod)) {
+
 					if ($cat_prod_ary['id_categorie'] == $cat_array['id']) {
 						$cat_prod_id[] = $cat_prod_ary['id_produit'];
 					}
