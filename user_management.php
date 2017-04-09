@@ -19,6 +19,11 @@
 		<span id="newpasswd">Nouveau mot de passe : <input type="password" name="new_passwd" required></span>
 		<input id="submit" type="submit" name="submit" value="OK"><br>
 	</form>
+	<h1 id="title">Supprimer son compte</h1>
+	<form action="delete_account.php" method="post">
+		<span id="passwd">Mot de passe : <input type="password" name="passwd" required></span>
+		<input id="submit" type="submit" name="submit" value="OK"><br>
+	</form>
 	<a id="retour" href="/rush00/index.php">Retour</a>
 	<a id="retour" href="/rush00/sign_out.php">Se deconnecter</a>
 </body>
