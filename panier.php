@@ -57,12 +57,21 @@ if($_POST)
 		margin-top: 5px;
 
 	}
+	.total {
+		border-style: solid;
+		border-width: 2px;
+		background:#ededed;
+		position: relative;
+		float: right;
+		height: 50px;
+		width: 100px;
+	}
 	</style>
 </head>
 <body>
 	<div>
 <?php
-if ($_SESSION['panier'])
+if (count($_SESSION['panier']) > 1)
 {
 		$db = mysqli_connect("localhost", "root", "root", "market");
 			$tab = mysqli_query($db, "SELECT `nom`, `image`, `prix` FROM `produit`");
@@ -76,7 +85,8 @@ if ($_SESSION['panier'])
 					<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
 					<div class="prod"><?php echo $array['nom'];?></div>
 					<div class="prix"><?php echo $array['prix'];?> &euro; - Quantité : <?php echo $value;?></div>
-          <?php $sous_tot = $array['prix'] * $value;?>
+		  <?php $sous_tot = $array['prix'] * $value;
+				$total += $sous_tot?>
           <div class="prix"><?php echo $sous_tot;?> &euro;</div>
           <input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Supprimer">
 			</div>
@@ -84,6 +94,15 @@ if ($_SESSION['panier'])
 		<?php } } }}
 					  else
 echo "Vous n'avez rien dans votre panier."?>
+<div class="total">
+<br>
+<?PHP
+if ($sous_tot == 0)
+	echo "TOTAL : 0€";
+else
+	echo "TOTAL : ".$total."€";
+?>
+</div>
 	</div>
 </body>
 </html>
