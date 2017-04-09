@@ -1,0 +1,96 @@
+#no-admin form
+{
+	color: #F5F5F5;
+	position: relative;
+	margin: auto;
+	border: solid;
+	border-color: green;
+	border-radius: 5%;
+	width: 350px;
+	height: 200px;
+	background-color: green;
+}
+
+#no-admin #title
+{
+	position: relative;
+	z-index: 10;
+	width: 160px;
+	font-size: x-large;
+	text-align: center;
+	margin: auto;
+	top: 60px;
+	color: white;
+	text-decoration: underline;
+}
+
+#no-admin #retour
+{
+	text-decoration: none;
+	color: rgb(252, 252, 252);
+	position: relative;
+	border-style: solid;
+	text-align: center;
+	z-index: 10;
+	top: 230px;
+	right: -653px;
+	border-color: green;
+	background-color: green;
+	box-shadow: 1px 1px 1px #000000;
+}
+
+#no-admin #submit
+{
+	border-radius: 10%;
+	background-color: #F5F5F5;
+	box-shadow: 1px 1px 1px #000000;
+	position: relative;
+	top: 40px;
+	width: 70px;
+	left: 203px;
+}
+
+
+#no-admin #name
+{
+	position: relative;
+	top: 40px;
+	left: 10px;
+}
+
+#no-admin #passwd
+{
+	position: relative;
+	top: 38px;
+	left: 73px;
+}
+
+#no-admin #text-passwd
+{
+	font-size: medium;
+	position: relative;
+	top: 38px;
+	left: 73px;
+}
+
+#no-admin #text-name
+{
+	font-size: medium;
+	position: relative;
+	top: 40px;
+    left: 10px;
+}
+
+#no-admin #submit:hover
+{
+	color: #F5F5F5;
+	background-color: green;
+	border-color: green;
+}
+
+#no-admin #retour:hover
+{
+	background-color: rgb(245, 62, 62);
+	border-color: rgb(245, 62, 62);
+	color: #F5F5F5;
+}
