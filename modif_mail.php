@@ -7,8 +7,8 @@
 		exit;
 	if ($_POST["submit"] == "OK" && $_POST["old_mail"] && $_POST["new_mail"])
 	{
-		$old = mysqli_real_escape_string($db, $_POST['old_mail']);
-		$new = mysqli_real_escape_string($db, $_POST['new_mail']);
+		$old = mysqli_real_escape_string($db, htmlentities($_POST['old_mail']));
+		$new = mysqli_real_escape_string($db, htmlentities($_POST['new_mail']));
 		$mailexist = false;
 		if ($old != $_SESSION['user'])
 			header('Location: /rush00/result.php?error=notyourmail');

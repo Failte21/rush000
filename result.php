@@ -11,7 +11,7 @@
 	}
 	else
 	{
-			echo "<h1  id=\"Success\">Success</h1><br>\n";
+		echo "<h1  id=\"Success\">Success</h1><br>\n";
 	}
 ?>
 <link rel="stylesheet" type="text/css" href="dir-css/result.css">

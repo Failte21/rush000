@@ -1,16 +1,26 @@
 <?php
 	include("../includes/header.php");
 
+	function check_img($url)
+	{
+		if (!(filter_var($url, FILTER_VALIDATE_URL)))
+			return ("http://sites.psu.edu/areicenutrition/wp-content/uploads/sites/34535/2015/10/rainbow.jpg");
+		$file_headers = get_headers($url);
+		if (!$file_headers[0] == 'HTTP/1.1 404 Not Found')
+			return ("http://sites.psu.edu/areicenutrition/wp-content/uploads/sites/34535/2015/10/rainbow.jpg");
+		return ($url);
+	}
+
 	$db = mysqli_connect("localhost","root", "root", "market");
 	if (mysqli_connect_errno())
 	{
 		echo "Connection error\n";
 		exit;
 	}
-
 	$name = mysqli_real_escape_string($db, htmlentities($_POST["name"]));
 	$price = mysqli_real_escape_string($db, htmlentities($_POST["price"]));
 	$img = mysqli_real_escape_string($db, htmlentities($_POST["img"]));
+	$img = check_img($img);
 	if ($name && $price)
 	{
 		$query = "SELECT id FROM produit WHERE nom='".$name."';";

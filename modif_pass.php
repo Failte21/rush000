@@ -19,9 +19,8 @@
 		exit;
 	if ($_POST["submit"] == "OK" && $_POST["old_passwd"] && $_POST["new_passwd"])
 	{
-		$old = hash("whirlpool", $_POST['old_passwd']);
-		$new = hash("whirlpool", $_POST['new_passwd']);
-		//echo "old : $old\nnew : $new\n";
+		$old = hash("whirlpool", htmlentities($_POST['old_passwd']));
+		$new = hash("whirlpool", htmlentities($_POST['new_passwd']));
 		$mail = $_SESSION['user'];
 		if (!check($db, $mail, $old))
 			header('Location: /rush00/result.php?error=wrongpwd');
