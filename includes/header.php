@@ -12,7 +12,7 @@ body {
   margin: auto;
   border: 3px solid #000;
   text-align: center;
-  background-image: url("img/fetl.jpg");
+  background-image: url("/rush00/img/fetl.jpg");
   padding: 5px;
   max-width: 1100px;
   height: auto;
