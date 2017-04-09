@@ -106,14 +106,27 @@ if ($sous_tot == 0)
 	echo "TOTAL : 0€";
 else
 	echo "TOTAL : ".$total."€";
+if(!$_SESSION['user'])
+{
 ?>
+<form action="connect.php" method="post">
+<?PHP
+	if ($total)
+	{
+?>
+	<input class="valider_button" type="submit" name="valider" value="Valider">
+<?PHP
+	}}
+	else
+	{?>
 <form action="commande.php" method="post">
 <?PHP
 	if ($total)
-	{?>
+	{
+?>
 	<input class="valider_button" type="submit" name="valider" value="Valider">
 <?PHP
-	}
+	}}
 ?>
 </form>
 </div>
