@@ -46,12 +46,20 @@ print_r($_SESSION);
 		width: auto;
 		margin: auto;
 		margin-top: 4px;
+		background-color: red;
+	}
+	.prix {
+		position: relative;
+		text-align: center;
+		display: block;
+		width: auto;
+		margin: auto;
 	}
 	.panier {
 		position: relative;
 		display: block;
 		margin: auto;
-		margin-top: 14px;
+		margin-top: 0px;
 	}
 	</style>
 </head>
@@ -61,15 +69,15 @@ print_r($_SESSION);
 		<?php
 		$db = mysqli_connect("localhost", "root", "root", "market");
 		if ($_GET['Categorie'] == "") {
-			$tab = mysqli_query($db, "SELECT `nom`, `image` FROM `produit`");
+			$tab = mysqli_query($db, "SELECT `nom`, `image`, `prix` FROM `produit`");
 			$find = true;
 			while ($array = mysqli_fetch_assoc($tab)) {
 				?>
 			<form action="index.php" method="post">
 			<div class="container">
 					<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
-					<div class="prod"><?php echo $array['nom']?></div>
-					<div class="prix"></div>
+					<div class="prod"><?php echo $array['nom'];?></div>
+					<div class="prix"><?php echo $array['prix'];?> &euro;</div>
 					<input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Ajouter">
 			</div>
 			</form>
@@ -90,7 +98,7 @@ print_r($_SESSION);
 						$cat_prod_id[] = $cat_prod_ary['id_produit'];
 					}
 				}
-				$tab = mysqli_query($db, "SELECT `id`, `nom`, `image` FROM `produit`");
+				$tab = mysqli_query($db, "SELECT `id`, `nom`, `image`, `prix` FROM `produit`");
 				while ($array = mysqli_fetch_assoc($tab)) {
 					foreach ($cat_prod_id as $value) {
 						if ($array['id'] == $value) { ?>
@@ -98,7 +106,7 @@ print_r($_SESSION);
 							<div class="container">
 									<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
 									<div class="prod"><?php echo $array['nom']?></div>
-									<div class="prix"></div>
+									<div class="prix"><?php echo $array['prix'];?> &euro;</div>
 									<input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Ajouter">
 							</div>
 							</form>
