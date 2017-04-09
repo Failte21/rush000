@@ -7,9 +7,11 @@
 		echo "Connection error\n";
 		exit;
 	}
-	if ($_POST['name'])
+	
+	$name = mysqli_real_escape_string($db, htmlentities($_POST["name"]));
+	if ($name)
 	{
-		$query = "SELECT id FROM client WHERE email='".$_POST['name']."';";
+		$query = "SELECT id FROM client WHERE email='".$name."';";
 		$sql = mysqli_query($db, $query);
 	 	$product_id = mysqli_fetch_assoc($sql);
 	 	if (count($product_id) > 0)

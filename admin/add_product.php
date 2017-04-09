@@ -8,18 +8,21 @@
 		exit;
 	}
 
-	if ($_POST['name'] && $_POST['price'])
+	$name = mysqli_real_escape_string($db, htmlentities($_POST["name"]));
+	$price = mysqli_real_escape_string($db, htmlentities($_POST["price"]));
+	$img = mysqli_real_escape_string($db, htmlentities($_POST["img"]));
+	if ($name && $price)
 	{
-		$query = "SELECT id FROM produit WHERE nom='".$_POST['name']."';";
+		$query = "SELECT id FROM produit WHERE nom='".$name."';";
 		$sql = mysqli_query($db, $query);
 		$product = mysqli_fetch_assoc($sql);
 		if (count($product) == 0)
 		{
-			$query = "INSERT INTO produit (nom, prix, image) VALUES ('" . $_POST['name'] . "', " . $_POST['price'] . ", '" . $_POST['img'] . "');";
+			$query = "INSERT INTO produit (nom, prix, image) VALUES ('" . $name . "', " . $price . ", '" . $img . "');";
 			if (mysqli_query($db, $query) === TRUE)
 			{
 				echo "Product ADDED\n";
-				$query = "SELECT id FROM produit WHERE nom='".$_POST['name']."';";
+				$query = "SELECT id FROM produit WHERE nom='".$name."';";
 				if ($sql = mysqli_query($db, $query))
 				{
 					$product_id = mysqli_fetch_assoc($sql);

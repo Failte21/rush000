@@ -28,9 +28,10 @@ if ($_SESSION['admin'])
 		echo "Connection error\n";
 		exit;
 	}
-	if ($_POST["submit"] === "Valider" && $_POST[name] !== "")
+
+	$name = mysqli_real_escape_string($db, htmlentities($_POST["name"]));
+	if ($_POST["submit"] === "Valider" && $name)
 		{
-			$name = mysqli_real_escape_string($db, $_POST['name']);
 			if (!check_admin($db, $name))
 			{
 				echo("L'utilisateur $name est deja un admin");
