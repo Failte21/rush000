@@ -1,4 +1,18 @@
-<?php include("includes/header.php");?>
+<?php include("includes/header.php");
+if($_POST)
+{
+	$elem = key($_POST);
+	foreach($_SESSION['panier'] as $key => $value)
+	{
+		if ($key == $elem)
+			$value--;
+		if ($value == 0)
+			unset($key);
+		$panier[$key] = $value;
+	}
+	$_SESSION['panier'] = $panier;
+}
+?>
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
@@ -47,7 +61,9 @@
 </head>
 <body>
 	<div>
-		<?php
+<?php
+if ($_SESSION['panier'])
+{
 		$db = mysqli_connect("localhost", "root", "root", "market");
 			$tab = mysqli_query($db, "SELECT `nom`, `image`, `prix` FROM `produit`");
 			$find = true;
@@ -55,7 +71,7 @@
         $tab = mysqli_query($db, "SELECT `nom`, `image`, `prix` FROM `produit`");
 			  while ($array = mysqli_fetch_assoc($tab)) {
 				      if ($array['nom'] == $key) {?>
-			<form action="index.php" method="post">
+			<form action="panier.php" method="post">
 			<div class="container">
 					<div class="image"><img src=<?php echo $array['image'];?> style="width:120px;height:120px";></div>
 					<div class="prod"><?php echo $array['nom'];?></div>
@@ -65,7 +81,9 @@
           <input class="panier" type="submit" name=<?php echo $array['nom'];?> value="Supprimer">
 			</div>
 			</form>
-		<?php } } }?>
+		<?php } } }}
+					  else
+echo "Vous n'avez rien dans votre panier."?>
 	</div>
 </body>
 </html>
