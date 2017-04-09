@@ -51,7 +51,7 @@ li a:hover {
 	if ($_SESSION['user'] || $_SESSION['admin'])
 	{
 ?>
-	<li><a href="/rush00/sign_out.php">Me deconnecter</a></li>
+	<li><a href="/rush00/user_management.php">Mon compte</a></li>
 <?php
 	}
 	else

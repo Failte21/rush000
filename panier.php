@@ -66,6 +66,12 @@ if($_POST)
 		height: 50px;
 		width: 100px;
 	}
+	.valider_button {
+		position: relative;
+		display: block;
+		margin: auto;
+		margin-top: 5px;
+	}
 	</style>
 </head>
 <body>
@@ -95,14 +101,34 @@ if (count($_SESSION['panier']) > 1)
 					  else
 echo "Vous n'avez rien dans votre panier."?>
 <div class="total">
-<br>
 <?PHP
 if ($sous_tot == 0)
 	echo "TOTAL : 0€";
 else
 	echo "TOTAL : ".$total."€";
+if(!$_SESSION['user'])
+{
 ?>
+<form action="connect.php" method="post">
+<?PHP
+	if ($total)
+	{
+?>
+	<input class="valider_button" type="submit" name="valider" value="Valider">
+<?PHP
+	}}
+	else
+	{?>
+<form action="commande.php" method="post">
+<?PHP
+	if ($total)
+	{
+?>
+	<input class="valider_button" type="submit" name="valider" value="Valider">
+<?PHP
+	}}
+?>
+</form>
 </div>
-	</div>
 </body>
 </html>
