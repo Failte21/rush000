@@ -3,4 +3,6 @@
 	session_start();
 	if ($_SESSION['user'])
 		$_SESSION['user'] = NULL;
+	if ($_SESSION['admin'])
+		$_SESSION['admin'] = NULL;
 ?>

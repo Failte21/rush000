@@ -1,4 +1,4 @@
-
+<?php include("includes/header.php");?>
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
@@ -37,7 +37,6 @@
 	</style>
 </head>
 <body>
-  <?php include("includes/header.php");?>
 	<?php include("includes/categories.php");?>
 	<div>
 		<?php

@@ -41,6 +41,7 @@ li a:hover {
 </style>
 </head>
 <body>
+	<?php echo $_SESSION['admin'] ?>
   <header class="header">
      <h1><font color="white">Fruits Légumes &amp; co.</font></h1>
   </header>
@@ -48,7 +49,7 @@ li a:hover {
 	<li><a class="active" href="index.php">Home</a></li>
 	<li><a href="sign_up.php">Inscription</a></li>
 <?php
-	if ($_SESSION['user'])
+	if ($_SESSION['user'] || $_SESSION['admin'])
 	{
 ?>
 	<li><a href="sign_out.php">Me deconnecter</a></li>
