@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 $panier = array();
@@ -17,10 +16,8 @@ if ($elem)
 	}
 }
 $_SESSION['panier'] = $panier;
-print_r($_SESSION);?>
-=======
+?>
 <?php include("includes/header.php");?>
->>>>>>> b7c07ac39e4fe03e57496061424dc4971461a246
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
