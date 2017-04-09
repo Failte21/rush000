@@ -11,6 +11,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Admin</title>
+		<link rel="stylesheet" type="text/css" href="dir-css/admin.css">
 	</head>
 	<body>
 <?php
@@ -22,7 +23,7 @@
 	<form action="admin/add_product.php" method="post">
 		<b>Nom</b> : <input type="text" name="name" required><br>
 		<b>Img url</b> : <input type="text" name="img"><br>
-		<b>Categorie</b> :         
+		<b>Categorie</b> :
 <?php
 		$req = mysqli_query($db, "SELECT `nom` FROM `categorie`");
 		while ($products = mysqli_fetch_assoc($req))
@@ -68,7 +69,7 @@
 	</form>
 	<br><br>
 	<b>Supprimer une categorie</b><br><br>
-	<form action="admin/delete_cat.php" method="post">
+	<form action="admin/add_cat.php" method="post">
 		<b>Categorie a supprimer</b> : <input type="text" name="name" required><br>
 		<input type="submit" name="submit" value="Valider">
 	</form>
@@ -79,15 +80,18 @@
 	}
 	else
 	{
-		echo "<br>Vous n'avez pas les droits d'administrateurs<br>";
-		echo "<a href='/rush00/index.php'>Retour</a>";
+		echo "<div id=\"no-admin\">";
+		echo "<br id=\"error\" >Vous n'avez pas les droits d'administrateurs<br>";
+		echo "<a id=\"retour\" href='/rush00/index.php'>Retour</a>";
 ?>
 	<br>
+	<h1 id="title">Admin<h1>
 	<form action="admin_db.php" method="post">
-		<b>Nom d'administrateur</b> : <input type="text" name="name"><br>
-		<b>Mot de passe</b> : <input type="password" name="pass"><br>
-		<input type="submit" name="submit" value="Valider">
+		<span id="text-name" >Nom d'administrateur : </span><input id="name" type="text" name="name"><br>
+		<span id="text-passwd" >Mot de passe : </span><input id="passwd" type="password" name="pass"><br>
+		<input id="submit" type="submit" name="submit" value="Valider">
 	</form>
 <?php
+	echo "</div>";
 	}
 ?>
