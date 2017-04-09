@@ -62,6 +62,7 @@ li a:hover {
 ?>
 	<li><a href="#contact">Contact</a></li>
 	<li><a href="#panier">Panier</a></li>
+	<li><a href="admin.php">Admin</a></li>
 </ul>
 
 </body>
