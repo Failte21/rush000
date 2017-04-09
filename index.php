@@ -46,7 +46,6 @@ print_r($_SESSION);
 		width: auto;
 		margin: auto;
 		margin-top: 4px;
-		background-color: red;
 	}
 	.prix {
 		position: relative;
