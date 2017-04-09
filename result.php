@@ -1,4 +1,5 @@
 <?php
+	include("includes/header.php");
 	if 	($_GET['error'])
 		echo "<h1 id=\"wrong\" >Oups... This Mail already exists</h1><br>";
 	else
