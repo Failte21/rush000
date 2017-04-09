@@ -19,8 +19,8 @@
 	}
 	if ($_POST["submit"] == "OK" && $_POST["mail"] && $_POST["passwd"])
 	{
-		$mail = mysqli_real_escape_string($db, $_POST['mail']);
-		$pass = hash("whirlpool", mysqli_real_escape_string($db, $_POST['passwd']));
+		$mail = mysqli_real_escape_string($db, htmlentities($_POST['mail']));
+		$pass = hash("whirlpool", mysqli_real_escape_string($db, htmlentities($_POST['passwd'])));
 		if (!check($db, $mail, $pass))
 			header('Location: /rush00/result_co.php?error=true');
 		else
