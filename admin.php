@@ -81,16 +81,18 @@
 		<h1>Supprimer une categorie</h1><br>
 		<form action="admin/delete_cat.php" method="post">
 		<div id="cat" ><b>Categorie</b> :
+		<select name="cat">
 <?php
 		$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
 		while ($cat = mysqli_fetch_assoc($req))
 		{
 ?>
-			<span><?php echo $cat['nom']." : "?></span>
-			<input type="checkbox" name="cat" value=<?php echo $cat['nom']?>>
+			<option value=<?php echo $cat['nom']?>><?php echo $cat['nom']?></option>
 <?php
 		}
-?>			<br><br>
+?>
+			</select>
+			<br><br>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br><br>
