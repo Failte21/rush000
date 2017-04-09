@@ -18,13 +18,11 @@
 <?php
 	if (!$_SESSION["admin"] AND $_POST['submit'] == 'Valider')
 	{
-		//echo $_POST["name"];
-		echo "hello\n";
 		$admin = mysqli_real_escape_string($db, $_POST['name']);
 		$pass = hash("whirlpool", mysqli_real_escape_string($db, $_POST['pass']));
-		$req = mysqli_query($db, "SELECT `id` FROM `categorie` WHERE `login` = '$admin' AND `mdp` = '$pass'");
-		$products = mysqli_fetch_assoc($req);
-		if (count($product) > 0)
+		$req = mysqli_query($db, "SELECT `id` FROM `admin` WHERE `login` = '$admin' AND `mdp` = '$pass'");
+		$user_admin = mysqli_fetch_assoc($req);
+		if (count($user_admin) > 0)
 			$_SESSION['admin'] = $admin;
 	}
 	if ($_SESSION["admin"])
