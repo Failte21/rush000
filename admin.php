@@ -53,49 +53,63 @@
 		<br><br><br>
 	</div>
 
-	<div class="rest">
+	<div class="suppro">
 		<h1>Supprimer un produit</h1><br>
 		<form action="admin/delete_product.php" method="post">
 			<span class="champ"><b>Produit a supprimer</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br><br>
+	</div>
+
+	<div class="suppro">
 		<h1>Supprimer un utilisateur</h1><br>
 		<form action="admin/delete_user.php" method="post">
 			<span class="champ"><b>Utilisateur a supprimer</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br><br>
+	</div>
+
+	<div class="suppro">
 		<h1>Ajouter un administrateur</h1><br>
 		<form action="admin/add_admin.php" method="post">
 			<span class="champ"><b>Utilisateur a ajouter</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br><br>
+	</div>
+
+	<div class="ajoutcat">
 		<h1>Ajouter une categorie</h1><br>
 		<form action="admin/add_cat.php" method="post">
 			<span class="champ"><b>Nom</b> : <input type="text" name="name" required><br></span>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br><br>
+	</div>
+
+	<div class="suppcat">
 		<h1>Supprimer une categorie</h1><br>
 		<form action="admin/delete_cat.php" method="post">
-		<div id="cat" ><b>Categorie</b> :
-		<select name="cat">
+			<div id="select">
+				<b>Categorie</b> :
+				<select name="cat">
 <?php
-		$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
-		while ($cat = mysqli_fetch_assoc($req))
-		{
+				$req = mysqli_query($db, "SELECT `nom`, `id` FROM `categorie`");
+				while ($cat = mysqli_fetch_assoc($req))
+				{
 ?>
-			<option value=<?php echo $cat['nom']?>><?php echo $cat['nom']?></option>
+					<option value=<?php echo $cat['nom']?>><?php echo $cat['nom']?></option>
 <?php
-		}
+				}
 ?>
-			</select>
-			<br><br>
+				</select>
+			</div>
 			<input type="submit" id="submit" name="submit" value="Valider">
 		</form>
 		<br><br><br>
+	</div>
 	</div>
 	</div>
 </body>
