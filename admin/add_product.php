@@ -47,6 +47,5 @@
 		}
 		else
 			echo "Product already exists.\n";
-		mysqli_free_result($sql);
 	}
 ?>

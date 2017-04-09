@@ -24,5 +24,4 @@
 		else
 			echo "Product does not exist.\n";
 	}
-	mysqli_free_result($sql);
 ?>
